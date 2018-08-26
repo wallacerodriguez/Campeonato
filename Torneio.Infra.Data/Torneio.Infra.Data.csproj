@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1B662B8-2269-4A29-8D3B-E4D12203AE55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Torneio.Infra.Data</RootNamespace>
+    <AssemblyName>Torneio.Infra.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Context\BaseContext.cs" />
+    <Compile Include="EntityConfig\CampeonatoMapping.cs" />
+    <Compile Include="EntityConfig\PartidaMapping.cs" />
+    <Compile Include="EntityConfig\TimeCampeonatoMapping.cs" />
+    <Compile Include="EntityConfig\TimeMapping.cs" />
+    <Compile Include="EntityConfig\TimePartidaMapping.cs" />
+    <Compile Include="Migrations\201808230233037_Initial.cs" />
+    <Compile Include="Migrations\201808230233037_Initial.Designer.cs">
+      <DependentUpon>201808230233037_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808230242587_Version_1.1.cs" />
+    <Compile Include="Migrations\201808230242587_Version_1.1.Designer.cs">
+      <DependentUpon>201808230242587_Version_1.1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808261533367_Version_1.2.cs" />
+    <Compile Include="Migrations\201808261533367_Version_1.2.Designer.cs">
+      <DependentUpon>201808261533367_Version_1.2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808261540386_Version_1.3.cs" />
+    <Compile Include="Migrations\201808261540386_Version_1.3.Designer.cs">
+      <DependentUpon>201808261540386_Version_1.3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808261620176_Version_1.4.cs" />
+    <Compile Include="Migrations\201808261620176_Version_1.4.Designer.cs">
+      <DependentUpon>201808261620176_Version_1.4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808261913334_Version_1.5.cs" />
+    <Compile Include="Migrations\201808261913334_Version_1.5.Designer.cs">
+      <DependentUpon>201808261913334_Version_1.5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CampeonatoRepository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\PartidaRepository.cs" />
+    <Compile Include="Repositories\TimeRepository.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808230233037_Initial.resx">
+      <DependentUpon>201808230233037_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808230242587_Version_1.1.resx">
+      <DependentUpon>201808230242587_Version_1.1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808261533367_Version_1.2.resx">
+      <DependentUpon>201808261533367_Version_1.2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808261540386_Version_1.3.resx">
+      <DependentUpon>201808261540386_Version_1.3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808261620176_Version_1.4.resx">
+      <DependentUpon>201808261620176_Version_1.4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808261913334_Version_1.5.resx">
+      <DependentUpon>201808261913334_Version_1.5.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Torneio.Domain\Torneio.Domain.csproj">
+      <Project>{b14131c2-7482-42ea-a7b7-57813777bce2}</Project>
+      <Name>Torneio.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Torneio.MVC.ViewModel.CampeonatoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Campeonatos</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Campeonato", "Create", null, new { @class = "btn btn-primary btn-large" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.CampeonatoId }, new { @class = "btn btn-primary btn-xs" })
+                <button type="button" onclick="openModalJogos(@item.CampeonatoId)" class="btn btn-primary btn-xs mostraJogos" >Definir Jogos</button>
+                @Html.ActionLink("Detalhes", "Details", new { id = item.CampeonatoId }, new { @class = "btn btn-default btn-xs" })
+                @Html.ActionLink("Deletar", "Delete", new { id = item.CampeonatoId }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div id="modalJogos" class="modal fade in" tabindex="-1" role="dialog">
+    <div id="modalDialog" class="modal-dialog" role="document">
+    </div>
+</div>
+
+
+
+
+            @section scripts{
+                <script>
+
+                    function openModalJogos(id) {
+
+                        $.ajax(
+                            {
+                                type: 'GET',
+                                url: "/Campeonatos/ListaJogos?id=" + id,
+                                dataType: 'html',
+                                cache: false,
+                                async: true,
+                                success: function (data) {
+                                    $('#modalDialog').html(data);
+                                    $('#modalJogos').modal('show');
+                                }
+                            });
+
+
+                    }
+
+                </script>
+            }

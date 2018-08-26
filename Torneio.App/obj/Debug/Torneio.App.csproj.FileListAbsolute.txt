@@ -1,0 +1,9 @@
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\bin\Debug\Torneio.App.dll
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\bin\Debug\Torneio.App.pdb
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\bin\Debug\Torneio.Domain.dll
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\bin\Debug\Torneio.Domain.pdb
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\obj\Debug\Torneio.App.csprojAssemblyReference.cache
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\obj\Debug\Torneio.App.csproj.CoreCompileInputs.cache
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\obj\Debug\Torneio.App.csproj.CopyComplete
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\obj\Debug\Torneio.App.dll
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.App\obj\Debug\Torneio.App.pdb

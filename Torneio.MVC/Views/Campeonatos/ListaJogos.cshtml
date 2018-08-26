@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Torneio.MVC.ViewModel.TimeViewModel>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Definir 1 Fase</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <h4>Jogos do Campeonato</h4>
+            <div class="row">
+                <div class="col-md-5 games-schedule">
+                    <div class="well">
+
+                        @for (var x = 0; x < Model.Count(); x++)
+                        {
+                            if (x % 2 != 0)
+                            {
+                                @:<div class="col-md-5">
+                                    @:<input id="Time(@x+1)" type="number" class="form-control" data-time="@Model.ElementAt(x).Nome" />
+                                    @:<span badge badge-light>@Model.ElementAt(x).Nome</span>
+                                @:</div>
+                            @:</div>
+                            @:</div>
+                            @:<hr />
+                        }
+                        else
+                        {
+                            @:<div class="games-schedule-items">
+                                @:<div class="row games-team">
+                                    @:<div class="col-md-5">
+                                        @:<input id="Time(@x+1)"  type="number" class="form-control" data-time="@Model.ElementAt(x).Nome" />
+                                        @:<span badge badge-light>@Model.ElementAt(x).Nome</span>
+                                    @:</div>
+                                    @:<div class="col-md-2">
+                                        @:<h4 class="img-circle">VS</h4>
+                                    @:</div>
+                                }
+
+                            }
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" onclick="salvarResultados()" class="btn btn-primary">Salvar Resultados</button>
+    </div>
+</div>
+
+
+
+<script>
+    function salvarResultados() {
+
+        alert("Salvando")
+
+    }
+
+</script>

@@ -1,0 +1,6 @@
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.Domain\bin\Debug\Torneio.Domain.dll
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.Domain\bin\Debug\Torneio.Domain.pdb
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.Domain\obj\Debug\Torneio.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.Domain\obj\Debug\Torneio.Domain.dll
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.Domain\obj\Debug\Torneio.Domain.pdb
+C:\Users\Wallace\Source\Repos\Campeonato\Torneio.Domain\obj\Debug\Torneio.Domain.csprojAssemblyReference.cache

@@ -1,0 +1,68 @@
+﻿@model Torneio.MVC.ViewModel.CampeonatoViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Novo campeonato</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>CampeonatoViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-check">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Quantidade" id="Quantidade1" value="8" checked>
+                    <label class="form-check-label" for="Quantidade">
+                        8 Participantes (Quartas de Finais)
+                    </label>
+                </div>
+                <div class=" form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Quantidade" id="Quantidade2" value="16">
+                    <label class="form-check-label" for="Quantidade">
+                        16 Participantes (Oitavas de Finais)
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimesCampeonatos, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBoxFor(c => c.TimeId, (MultiSelectList)ViewBag.Times, new { @class = "form-control" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+    </script>
+}
